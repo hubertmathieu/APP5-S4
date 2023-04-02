@@ -1,0 +1,2 @@
+Lecture de l'AST trouve : 0101+1011+1011
+Evaluation de l'AST trouve : 2123
