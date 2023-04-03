@@ -1,7 +1,5 @@
 package prob.AnalyseurSynthaxique;
 
-/** @author Ahmed Khoumsi */
-
 import java.util.Objects;
 
 /** Classe representant une feuille d'AST
@@ -25,17 +23,20 @@ public class NoeudAST extends ElemAST {
   public int EvalAST( ) {
     if (Objects.equals(op, "+"))
       return f1.EvalAST() + f2.EvalAST();
+    else if (Objects.equals(op, "-"))
+      return f1.EvalAST() - f2.EvalAST();
+    else if (Objects.equals(op, "*"))
+      return f1.EvalAST() * f2.EvalAST();
     else
-      return 0;
+      return f1.EvalAST() / f2.EvalAST();
   }
 
 
   /** Lecture de noeud d'AST
    */
   public String LectAST( ) {
-     return f1.LectAST() + op + f2.LectAST();
+     return f1.LectAST() + f2.LectAST() + op;
   }
-
 }
 
 

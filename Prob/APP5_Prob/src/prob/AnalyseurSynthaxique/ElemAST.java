@@ -1,7 +1,5 @@
 package prob.AnalyseurSynthaxique;
 
-/** @author Ahmed Khoumsi */
-
 /** Classe Abstraite dont heriteront les classes FeuilleAST et NoeudAST
  */
 public abstract class ElemAST {
@@ -22,5 +20,4 @@ public abstract class ElemAST {
   public void ErreurEvalAST(String err) throws Exception {
     throw new Exception("Erreur syntaxique: " + err);
   }
-
 }

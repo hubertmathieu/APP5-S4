@@ -5,55 +5,52 @@ package prob.AnalyseurLexical; /** @author Ahmed Khoumsi */
  */
 public class Terminal {
 
-  private final String chaine;
+    private final String chaine;
 
-  private boolean isOperande = false;
-  private boolean isVariable = false;
-  private int value = 0;
+    private TerminalType type;
 
-  private boolean isOperator = false;
-  private OperatorType operator;
+    public enum TerminalType {
+      MULT, DIV, SUB, ADD, NB, ID, O_PA, C_PA, END
+    }
 
-  public enum OperatorType {
-      MULT, DIV, SUB, ADD
-  }
-
-
-/** Un ou deux constructeurs (ou plus, si vous voulez)
-  *   pour l'initalisation d'attributs 
- */	
+    /** Un ou deux constructeurs (ou plus, si vous voulez)
+      *   pour l'initalisation d'attributs
+     */
     public Terminal(String chaine) {
-
         this.chaine = chaine;
 
-        switch (chaine) {
-            case "+" -> {
-                isOperator = true;
-                operator = OperatorType.ADD;
+        if (chaine.length() > 0) {
+            switch (chaine) {
+                case "+" -> {
+                    type = TerminalType.ADD;
+                }
+                case "-" -> {
+                    type = TerminalType.SUB;
+                }
+                case "*" -> {
+                    type = TerminalType.MULT;
+                }
+                case "/" -> {
+                    type = TerminalType.DIV;
+                }
+                case "(" -> {
+                    type = TerminalType.O_PA;
+                }
+                case ")" -> {
+                    type = TerminalType.C_PA;
+                }
             }
-            case "-" -> {
-                isOperator = true;
-                operator = OperatorType.SUB;
-            }
-            case "*" -> {
-                isOperator = true;
-                operator = OperatorType.MULT;
-            }
-            case "/" -> {
-                isOperator = true;
-                operator = OperatorType.DIV;
-            }
-        }
 
-        char firstchar = chaine.charAt(0);
+            char firstChar = chaine.charAt(0);
 
-        if (String.valueOf(firstchar).matches("[A-Z]")) {
-            isOperande = true;
-            isVariable = true;
-        }
-        if (String.valueOf(firstchar).matches("[0-9]")) {
-            isOperande = true;
-            value = Integer.parseInt(chaine);
+            if (String.valueOf(firstChar).matches("[A-Z]")) {
+                type = TerminalType.ID;
+            }
+            if (String.valueOf(firstChar).matches("[0-9]")) {
+                type = TerminalType.NB;
+            }
+        } else {
+            type = TerminalType.END;
         }
     }
 
@@ -61,4 +58,38 @@ public class Terminal {
       return chaine;
     }
 
+    public TerminalType getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        switch (type) {
+            case ADD -> {
+                return "Chaine: " + getChaine() + "    Type: ADDITION";
+            }
+            case SUB -> {
+                return "Chaine: " + getChaine() + "    Type: SOUSTRACTION";
+            }
+            case MULT -> {
+                return "Chaine: " + getChaine() + "    Type: MULTIPLICATION";
+            }
+            case DIV -> {
+                return "Chaine: " + getChaine() + "    Type: DIVISION";
+            }
+            case O_PA -> {
+                return "Chaine: " + getChaine() + "    Type: PARENTHÈSE OUVRANTE";
+            }
+            case C_PA -> {
+                return "Chaine: " + getChaine() + "    Type: PARENTHÈSE FERMANTE";
+            }
+            case ID -> {
+                return "Chaine: " + getChaine() + "    Type: IDENTIFICATEUR";
+            }
+            case NB -> {
+                return "Chaine: " + getChaine() + "    Type: NOMBRE";
+            }
+            default -> {return "";}
+        }
+    }
 }

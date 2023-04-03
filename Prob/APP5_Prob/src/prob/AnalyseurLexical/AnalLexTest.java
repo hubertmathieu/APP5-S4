@@ -22,7 +22,7 @@ class AnalLexTest {
 
         while(lexical.resteTerminal()){
             Terminal t = lexical.prochainTerminal();
-            toWrite.append(t.getChaine()).append("\n");  // toWrite contient le resultat
+            toWrite.append(t.toString()).append("\n");  // toWrite contient le resultat
         }
 
         System.out.println(toWrite); 	// Ecriture de toWrite sur la console

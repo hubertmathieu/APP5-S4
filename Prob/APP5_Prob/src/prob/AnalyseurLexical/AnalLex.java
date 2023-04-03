@@ -1,7 +1,4 @@
-package prob.AnalyseurLexical; /** @author Ahmed Khoumsi */
-
-import prob.Reader;
-import prob.Writer;
+package prob.AnalyseurLexical;
 
 /** Cette classe effectue l'analyse lexicale
  */
@@ -18,8 +15,8 @@ public class AnalLex {
       UNDERSCORE,
   }
 
-/** Constructeur pour l'initialisation d'attribut(s)
- */
+  /** Constructeur pour l'initialisation d'attribut(s)
+   */
   public AnalLex(String s) {
     _str = s;
     charIndex = 1;
@@ -27,18 +24,18 @@ public class AnalLex {
   }
 
 
-/** resteTerminal() retourne :
-      false  si tous les terminaux de l'expression arithmetique ont ete retournes
-      true s'il reste encore au moins un terminal qui n'a pas ete retourne
- */
+  /** resteTerminal() retourne :
+        false  si tous les terminaux de l'expression arithmetique ont ete retournes
+        true s'il reste encore au moins un terminal qui n'a pas ete retourne
+   */
   public boolean resteTerminal() {
     return charIndex <= strLength;
   }
 
 
-/** prochainTerminal() retourne le prochain terminal
-      Cette methode est une implementation d'un AEF
- */
+  /** prochainTerminal() retourne le prochain terminal
+        Cette methode est une implementation d'un AEF
+   */
   public Terminal prochainTerminal() throws Exception {
     State currState = State.INIT;
     State nextState = State.INIT;
@@ -52,7 +49,7 @@ public class AnalLex {
             nextState = State.FINAL2;
           } else if (c.matches("[0-9]")) {
             nextState = State.FINAL1;
-          } else if (c.matches("[+\\-*/]")) {
+          } else if (c.matches("[+\\-*/()]")) {
             charIndex++;
             return new Terminal(c);
           } else {
@@ -69,7 +66,6 @@ public class AnalLex {
           else if (c.matches("_")) {
             nextState = State.UNDERSCORE;
           } else {
-            charIndex++;
             return new Terminal(chaine.toString());
           }
         }
@@ -89,12 +85,17 @@ public class AnalLex {
   }
 
  
-/** ErreurLex() envoie un message d'erreur lexicale
- */ 
+  /** ErreurLex() envoie un message d'erreur lexicale
+  */
   public void ErreurLex(int index, String explication, char cInvalid) throws Exception {
      throw new Exception("\nErreur lexical à l'index " + index +
              ", caractère interdit : " + cInvalid +
               "\nChaine avant l'erreur " + _str.substring(0, index - 1) +
              "\n" + explication);
   }
+
+  public int getCharIndex() {
+    return charIndex;
+  }
+
 }

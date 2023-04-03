@@ -1,7 +1,9 @@
-65
-+
-A_x
-90
-/
-8
-A
+Chaine: (    Type: PARENTHÈSE OUVRANTE
+Chaine: U_x    Type: IDENTIFICATEUR
+Chaine: -    Type: SOUSTRACTION
+Chaine: 5    Type: NOMBRE
+Chaine: )    Type: PARENTHÈSE FERMANTE
+Chaine: *    Type: MULTIPLICATION
+Chaine: W_z    Type: IDENTIFICATEUR
+Chaine: /    Type: DIVISION
+Chaine: 35    Type: NOMBRE

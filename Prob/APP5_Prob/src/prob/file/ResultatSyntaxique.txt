@@ -1,2 +1,2 @@
-Lecture de l'AST trouve : 0101+1011+1011
-Evaluation de l'AST trouve : 2123
+Lecture de l'AST trouve : U_x5-W_z35/*
+Evaluation de l'AST trouve : 0

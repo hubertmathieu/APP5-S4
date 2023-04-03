@@ -1,5 +1,9 @@
-0101
-+
-1011
-+
-1011
+( --> Type : O_PA
+U_x --> Type : ID
+- --> Type : SUB
+5 --> Type : NB
+) --> Type : C_PA
+* --> Type : MULT
+W_z --> Type : ID
+/ --> Type : DIV
+35 --> Type : NB
