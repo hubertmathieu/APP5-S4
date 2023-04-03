@@ -1,9 +1,9 @@
-( --> Type : O_PA
-U_x --> Type : ID
-- --> Type : SUB
-5 --> Type : NB
-) --> Type : C_PA
-* --> Type : MULT
-W_z --> Type : ID
-/ --> Type : DIV
-35 --> Type : NB
+Chaine: (    Type: PARENTHÈSE OUVRANTE
+Chaine: U_x    Type: IDENTIFICATEUR
+Chaine: -    Type: SOUSTRACTION
+Chaine: 5    Type: NOMBRE
+Chaine: )    Type: PARENTHÈSE FERMANTE
+Chaine: *    Type: MULTIPLICATION
+Chaine: W_z    Type: IDENTIFICATEUR
+Chaine: /    Type: DIVISION
+Chaine: 35    Type: NOMBRE

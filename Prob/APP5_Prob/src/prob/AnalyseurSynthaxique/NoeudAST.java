@@ -37,6 +37,13 @@ public class NoeudAST extends ElemAST {
   public String LectAST( ) {
      return f1.LectAST() + f2.LectAST() + op;
   }
+
+  @Override
+  public String toString() {
+    return "\nNoeud: " + op + " -> L:(" + f1 + "), R:(" + f2 + ")";
+  }
+
+
 }
 
 

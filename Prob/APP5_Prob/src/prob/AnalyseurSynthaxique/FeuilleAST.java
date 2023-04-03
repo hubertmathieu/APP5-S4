@@ -16,7 +16,7 @@ public class FeuilleAST extends ElemAST {
       this.s = s;
 
       if (String.valueOf(s.charAt(0)).matches("[0-9]")) {
-          value = Integer.valueOf(s);
+          value = Integer.parseInt(s);
       } else {
           isId = false;
       }
@@ -34,5 +34,10 @@ public class FeuilleAST extends ElemAST {
     */
     public String LectAST( ) {
         return s;
+    }
+
+    @Override
+    public String toString() {
+        return LectAST();
     }
 }
