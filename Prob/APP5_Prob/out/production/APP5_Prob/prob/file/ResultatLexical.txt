@@ -1,7 +1,7 @@
 Chaine: (    Type: PARENTHÈSE OUVRANTE
 Chaine: U_x    Type: IDENTIFICATEUR
 Chaine: -    Type: SOUSTRACTION
-Chaine: 5    Type: NOMBRE
+Chaine: V_y    Type: IDENTIFICATEUR
 Chaine: )    Type: PARENTHÈSE FERMANTE
 Chaine: *    Type: MULTIPLICATION
 Chaine: W_z    Type: IDENTIFICATEUR

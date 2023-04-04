@@ -14,9 +14,11 @@ public abstract class ElemAST {
    */
   public abstract String LectAST();
 
+  public abstract String Postfix();
 
-/** ErreurEvalAST() envoie un message d'erreur lors de la construction d'AST
- */  
+
+  /** ErreurEvalAST() envoie un message d'erreur lors de la construction d'AST
+   */
   public void ErreurEvalAST(String err) throws Exception {
     throw new Exception("Erreur syntaxique: " + err);
   }

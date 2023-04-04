@@ -34,16 +34,18 @@ public class NoeudAST extends ElemAST {
 
   /** Lecture de noeud d'AST
    */
-  public String LectAST( ) {
-     return f1.LectAST() + f2.LectAST() + op;
+  public String LectAST() {
+     return f1.LectAST() + op + f2.LectAST();
+  }
+
+  public String Postfix() {
+    return f1.Postfix() + " " + f2.Postfix() + " " + op + " ";
   }
 
   @Override
   public String toString() {
     return "\nNoeud: " + op + " -> L:(" + f1 + "), R:(" + f2 + ")";
   }
-
-
 }
 
 

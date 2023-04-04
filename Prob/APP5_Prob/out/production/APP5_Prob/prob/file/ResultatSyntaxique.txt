@@ -1,4 +1,8 @@
-Lecture de l'AST trouve : U_x5-W_z35/*
-Evaluation de l'AST trouve : 0
+Lecture de l'AST trouve : 55-47*14/2
+Evaluation de l'AST trouve : 56
 Evaluation de la structure de l'AST trouve : 
-Noeud: * -> L:(Noeud: - -> L:(U_x), R:(5)), R:(Noeud: / -> L:(W_z), R:(35))
+
+Noeud: * -> L:(
+Noeud: - -> L:(55), R:(47)), R:(
+Noeud: / -> L:(14), R:(2))
+Evaluation de l'expression postfix :55 47 -  14 2 /  * 

@@ -1,7 +1,7 @@
-package prob.AnalyseurLexical; /** @author Ahmed Khoumsi */
+package prob.AnalyseurLexical;
 
-/** Cette classe identifie les terminaux reconnus et retournes par
- *  l'analyseur lexical
+/**
+ * Cette classe identifie les terminaux reconnus et retournes par l'analyseur lexical
  */
 public class Terminal {
 
@@ -13,9 +13,6 @@ public class Terminal {
       MULT, DIV, SUB, ADD, NB, ID, O_PA, C_PA, END
     }
 
-    /** Un ou deux constructeurs (ou plus, si vous voulez)
-      *   pour l'initalisation d'attributs
-     */
     public Terminal(String chaine) {
         this.chaine = chaine;
 

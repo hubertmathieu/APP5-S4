@@ -9,6 +9,7 @@ class DescenteRecursiveTest {
     public static void main(String[] args) {
         String toWriteLect = "";
         String toWriteEval = "";
+        String toWritePostFix = "";
         String toWriteAST = "";
 
         System.out.println("Debut d'analyse syntaxique");
@@ -29,7 +30,9 @@ class DescenteRecursiveTest {
             System.out.println(toWriteEval);
             toWriteAST += "Evaluation de la structure de l'AST trouve : \n" + RacineAST + "\n";
             System.out.println(toWriteAST);
-            new Writer(args[1],toWriteLect+toWriteEval+toWriteAST);
+            toWritePostFix += "Evaluation de l'expression postfix :" + RacineAST.Postfix() + "\n";
+            System.out.println(toWritePostFix);
+            new Writer(args[1],toWriteLect+toWriteEval+toWriteAST+toWritePostFix);
 
         } catch (Exception e) {
             System.out.println(e);
